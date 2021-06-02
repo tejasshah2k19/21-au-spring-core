@@ -1,3 +1,14 @@
+IoC container
+	1) BeanFactory 
+	2) ApplicationContext
+		2.1) ClassPathXmlApplicationContext
+		2.2) FileSystem
+		2.3) WebXmlApplicationContext  
+	
+	
+
+
+
 Q:
 	if i have two objects and i want to check 
 	both are using same memory or not how can i ?
