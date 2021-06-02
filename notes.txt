@@ -1,0 +1,93 @@
+Q:
+	if i have two objects and i want to check 
+	both are using same memory or not how can i ?
+
+ans:
+	we can print hashcode of object using toString()
+	in simple we print object in s.o.p 
+	and we got hashcode of objects if both are same 
+	it means they are refering same memory address 	
+	else not 
+singleton :- 
+
+when we add scope="prototype" in spring.xml 
+
+IoC container will create new object every time ,
+when you ask using getBean 
+
+
+when i want to create new connection every time for faster perfomance. 
+
+now IoC container will not manage life of that prototype instance, so you are responsible to release 
+memory of that instance. 
+
+this is just for alteration in spring , spring will not strict with us for singleton design pattern.
+
+spring bean -->scope 
+	singleton
+	prototype*
+	request
+	session
+	global-session  
+
+we  can also use other scope 
+like,
+	request
+	session
+	global-session
+
+above three can used in web application 
+
+
+
+user - 500 - open connection --> logout 
+prototype --> open --> task-->close 
+
+
+
+--------------------------
+
+IoC container also have initliazing and destroy support like servlet.
+
+object => create --> xyz()  
+	  destory --> def() 
+
+servlet --> init / destroy 
+
+
+ListProductController -- server 
+	UserDao -- controller -- new -- 
+
+userDao is depen. of ListProductController 
+
+can i have any solution  ? that make sure when every i am accessing ListProductController, i have UserDao ready?
+
+
+class ListProductController{
+
+	UserDao userDao;
+	ListProductController(UserDao ud){
+		this.userDao = ud;
+	}
+
+}
+
+UserDao ud = new UserDao();
+ListProuctController l = new ListProductController(ud); // correct??
+
+DI 
+
+1)  constructor injection 
+2)  setter injection 
+
+
+
+
+
+
+
+
+
+
+
+

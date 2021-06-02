@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-init-method="myInit"
+	default-destroy-method="myDestroy"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.controller.SignupController" id="sgp"></bean>
+
+	<bean class="com.util.DbConnection" id="connection"
+		scope="singleton" init-method="myInit" destroy-method="myDestroy">
+		<property name="url" value="localhost:3306"></property>
+		<property name="userName" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+
+
+	<bean class="com.dao.UserDao" id="userDao">
+		<constructor-arg name="userName" value="gabbar"></constructor-arg>
+	</bean>
+	
+	
+	<bean class="com.dao.ProductDao" id="productDao"></bean>
+	
+	<bean class="com.controller.ListProductController" id="listProductController">
+		<constructor-arg   ref="userDao" ></constructor-arg>
+	</bean>
+
+	<bean class="com.bean.UserBean" id="userBean">
+		<property name="firstName" value="admin"></property>
+		<property name="email" value="admin@gmail.com"></property>
+		<property name="password" value="password123"></property>
+	<property name="userDetail" ref="userDetailBean"></property>
+	</bean>
+
+	<bean class="com.bean.UserDetailBean" id="userDetailBean">
+		<property name="city" value="ahmedabad"></property>
+		<property name="hobby" value="whatsapp"></property>
+	</bean>
+
+</beans>
